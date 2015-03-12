@@ -40,8 +40,42 @@
 			<artifactId>struts2-json-plugin</artifactId>
 			<version>${struts-version}</version>
 		</dependency>
+		
+		<!-- spring configuration -->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-spring-plugin</artifactId>
+			<version>2.3.15.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>3.0.5.RELEASE</version>
+		</dependency>
+		
+		<!-- database -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.27</version>
+		</dependency>
 
-
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.1.2</version>
+		</dependency>
+		
 		<!-- velocity -->
 		<dependency>
 			<groupId>org.apache.velocity</groupId>
@@ -127,8 +161,8 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-			
-			
+
+
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
@@ -138,16 +172,16 @@
 					<!-- <jettyXml>jetty.xml,jetty-ssl.xml,jetty-https.xml</jettyXml> -->
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<webAppSourceDirectory>${project.basedir}/WebContent</webAppSourceDirectory>
-					<webApp>						
+					<webApp>
 						<contextPath>/</contextPath>
 					</webApp>
-					  <httpConnector>
-			            <port>8088</port>
-			            <idleTimeout>60000</idleTimeout>
-			          </httpConnector>
+					<httpConnector>
+						<port>8088</port>
+						<idleTimeout>60000</idleTimeout>
+					</httpConnector>
 				</configuration>
 			</plugin>
-			
+
 		</plugins>
 	</build>
 
