@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/* CSS Document */
+nav.menu{
+	margin:3px auto;
+	padding:0;
+	text-align:center;
+}
+
+nav.menu > ul{	display:inline-block; }
+
+nav.menu ul li{
+	float: left;
+	list-style-type:none;
+	position:relative;
+	line-height:1.15;
+}
+
+nav.menu li + li {
+	border-left:1px solid #fff;
+}
+
+nav.menu li a{
+	display: block ;
+	padding: .25em .8em;
+	font-family:"Source Sans Pro", helvetica, sans-serif; 
+	font-style:normal;
+	font-weigth:600;
+	font-size:1.2em;
+	text-align:left;
+	color:#fff;
+	text-decoration:none;
+	-webkit-font-smoothing:antialiased;
+}
+
+nav.menu li.choice1 a {
+	background:#f58c21;
+	}
+nav.menu li.choice2 a {
+	background:#4eb8ea;
+	}
+	
+nav.menu li:hover > a{
+	color:#555;
+	border-color :#fff;
+	broder:0;
+}
+
+nav.menu li:last-child a{ border-bottom-right-radius:10px; }
+
+nav.menu li:first-child a{ border-top-left-radius:10px;}
+
+/* level 2 menus */
+nav.menu li ul {
+	opacity:0; 
+	visibility:hidden;
+	position:absolute;
+	width:12em;
+	left:0;
+	top:100%;
+	-webkit-transition: 1s all;
+	-moz-transition: 1s all;
+		 transition: 1s all;
+}
+
+.touch nav.menu li ul{ 
+	-webkit-transition:1s opacity;
+	-moz-transition: 1s opacity;
+	transition:1s opacity;
+}
+
+nav.menu li:hover > ul{
+	opacity:1;
+	visibility: visible;
+}
+
+nav.menu li li{
+	float:none;
+}
+
+nav.menu li li:first-child a{
+	border-radius: 0 ;
+}
+
+nav.menu li li:last-child a{
+	border-bottom-left-radius:10px;
+}
+
+.no-csstransitions nav.menu li ul{
+	visibility:visible;
+	opacity:1;
+	display:none;
+}
+
+.no-csstransition nav.menu li:hover > ul{
+	display:block;
+}
+
+nav.menu.bolder{
+	font-weight: bolder;
+}
+
+nav.menu.bolder li:hover > a{
+	color: #afefef;
+}

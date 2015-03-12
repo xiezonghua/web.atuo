@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/* CSS document*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+
+body {
+	font-family: "Microsoft YaHei", "微软雅黑", "SimHei", "黑体";
+	background: #efefef;
+	margin: 0;
+}
+
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+
+header {
+	position: relative;
+	height: 36px;
+	background: #fff;
+	border-radius: 10px 0 10px 0;
+	box-shadow: 0 12px 8px -9px #555;
+	padding: 1px;
+}
+
+form.search_bar{
+	margin-top:10px;
+	padding:5px;
+	height:30px;
+	border: 1px solid red;
+	font-size:.6em;
+}
+
+.search_bar section{
+	float:left;
+	padding:10px;
+}
+
+.search_bar section label{
+	padding:10px;
+}

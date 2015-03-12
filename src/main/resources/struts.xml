@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<constant name="struts.convention.action.mapAllMatches" value="true" />
+	<constant name="struts.convention.default.parent.package"
+		value="back-default" />
+
+	<package name="back-default" namespace="back" extends="struts-default">
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="authCheckFilter" class="com.huayu.web.filter.AuthCheckFilter"></interceptor>
+		</interceptors>
+		<default-interceptor-ref name="authCheckFilter">			
+		</default-interceptor-ref>
+	</package>
+</struts>

@@ -1,0 +1,437 @@
+@charset "UTF-8";
+/* CSS document*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+
+body {
+	font-family: "Microsoft YaHei", "微软雅黑", "SimHei", "黑体";
+	background: #efefef;
+	margin: 0;
+}
+
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+header {
+	position: relative;
+	height: 36px;
+	background: #19A97B;
+	border-radius: 10px 0 10px 0;
+	box-shadow: 0 12px 8px -9px #555;
+	padding: 1px;
+}
+
+header section#title {
+	position: absolute;
+	width: 230px;
+	height: 36px;
+	left: 0px;
+	top: 0;
+}
+
+header section#title img {
+	max-width: 30px;
+	max-height: 30px;
+	padding: 12px 12px 0;
+}
+
+header h2 {
+	padding: 0px 4px;
+	font-family: "Microsoft YaHei", "微软雅黑", "SimHei", "黑体";
+	font-weight: 400; /*设定下载字体的粗细*/
+	font-size: 1.4em;
+	line-height: 1.5;
+	color: #fff;
+	text-shadow: 0 -4px 3px #555;
+	display: inline;
+}
+
+form.search {
+	position: absolute;
+	width: 250px;
+	top: 5px;
+	right: 20px;
+}
+
+.search input {
+	width: 70px;
+	padding: 2px 0 3px 5px;
+	border-radius: 10px 0 10px 0;
+	outline-style: none;
+	background: #888;
+	-webkit-transition: 2s width;
+	transition: 2s width;
+}
+
+.search input:focus {
+	width: 150px;
+	background: #fff;
+}
+
+.search label {
+	display: none;
+}
+
+section#regist_login {
+	position: absolute;
+	width: 7em;
+	top: 5px;
+	right: 2px;
+}
+
+section#regist_login ul {
+	float: right;
+	padding: 0 20px;
+}
+
+section#regist_login li {
+	position: relative;
+	float: left;
+	padding: 0 2px;
+	list-style-type: none;
+	font-size: 0.8em;
+	line-height: 1.5em;
+}
+
+section#regist_login li a {
+	text-decoration: none;
+	letter-spacing: 0.05em;
+	color: #fff;
+}
+
+section#regist_login li>a:hover {
+	color: #afefef;
+}
+
+section#regist_login li form.login {
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 100%;
+	background: #fff;
+	box-shadow: 0 2px 8px 5px #555;
+	width: 17em;
+}
+
+section#regist_login li:hover form {
+	display: block;
+}
+
+.login fieldset {
+	border: 0;
+	margin: 2px 20px;
+}
+
+.login legend span {
+	font-weight: 700;
+	font-size: 1.3em;
+	line-height: 1.6em;
+	letter-spacing: -.05em;
+}
+
+.login section {
+	overflow: hidden; /*包围控件和标注*/
+	padding: .25em 0; /*表单元素的间距*/
+}
+
+.login label {
+	font-weight: 400;
+	float: left;
+	width: 4em; /*标注栏的宽度*/
+	margin: .5em .2em 0 0; /*外边距保持文本与控件的间距*/
+	line-height: 1.1;
+	color: #555;
+}
+
+.login input {
+	float: right;
+	width: 7em; /*控件栏的宽度*/
+	margin: .2em 0 0 .5em;
+	padding: 3px 10px 2px; /*输入文本与控件的间距*/
+	color: #555;
+	font-size: .8em;
+	outline: none; /*去掉默认的轮廓线*/
+	border-radius: 10px 0 10px 0;
+}
+
+.login section input[type=submit] {
+	float: right; /*将按钮与控件右边对齐*/
+	width: auto; /*重设按钮宽度*/
+	margin: 0 2px 3px 0;
+	padding: 0px 8px 3px;
+	font-size: 1em;
+	font-weight: 800;
+	color: #fff;
+	border: none;
+	background-color: #19A97B;
+	box-shadow: 1px 1px 2px #888;
+}
+
+#regist_login .login section p { /*内容为"not signed up?"*/
+	float: right;
+	clear: both;
+	margin: .2em 1em 0;
+	text-align: right;
+	font-size: .8em;
+	line-height: 1.2;
+	color: #555;
+}
+
+#regist_login .login section p a {
+	color: #333;
+} /*到注册表单的链接*/
+#regist_login .login section p a:hover {
+	color: #777;
+	text-decoration: none;
+}
+
+/* header css document end*/
+
+/* flow area css document begin*/
+section#flow_area {
+	overflow: hidden;
+	margin: 10px 0 0 0;
+	padding: 0 0 10px;
+}
+
+#flow_area article {
+	float: left;
+	width: 66%;
+	padding: 12px;
+	background: #fff;
+	border-radius: 12px 0 12px 0;
+	box-shadow: 0 12px 8px -9px #555;
+}
+
+#flow_area article img {
+	width: 100%;
+	height: 100%;
+}
+
+#flow_area aside {
+	float: right;
+	width: 28%;
+	background: #fff;
+	padding: 2px 12px 12px 12px;
+	border-radius: 12px 0 12px 0;
+	box-shadow: 0 12px 8px -9px #555;
+}
+
+#flow_area aside h1 {
+	font-size: 0.9em;
+	padding: 5px 12px;
+}
+
+#flow_area aside p {
+	font-size: 0.6em;
+	line-height: 1.5;
+	padding: 0 0 0 30px;
+	letter-spacing: .5em;
+}
+/* flow area css document end*/
+
+/*resource_area css document begin*/
+section#resource_repository {
+	border-radius: 10px 0px 10px 0px;
+	border: 1px solid #f58c21;
+	margin: 8px 0 16px;
+	overflow: hidden;
+}
+
+.resource_area article { /*四本书四栏*/
+	float: left;
+	width: 25%;
+	padding: 10px 0;
+	background: none;
+	border-bottom: 5px solid #19A97B;
+}
+
+section#resource_repository section:last-child article {
+	border-bottom: none;
+}
+
+.resource_area h1 {
+	padding: 12px;
+}
+
+.resource_area article .inner { /*封面外包装*/
+	position: relative; /*为弹出层提供定位上下文*/
+	width: 140px; /*包装每一本书*/
+	margin: 0 auto; /*在各自article元素内居中每一本书*/
+}
+
+.resource_area .inner h3 { /*旋转文字*/
+	position: absolute;
+	width: 160px;
+	bottom: 5px; /*把文字定位在图书右侧*/
+	color: #ccc;
+	font-size: 1.4em;
+	font-family: Lato, helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 900;
+	text-align: left;
+}
+
+/*较窄的封面需要不同的偏移量*/
+.resource_area article.right:last-child h3 {
+	left: 85%;
+}
+
+.resource_area article img {
+	box-shadow: 0 12px 8px -9px #555;
+	height: 150px;
+} /*封面阴影*/
+.resource_area article aside { /*弹出层共享样式开始*/
+	display: none; /*隐藏弹出层*/
+	position: absolute; /*相对于包含图片的内部div*/
+	z-index: 2;
+	width: 200px; /*弹出层宽度*/
+	background: #fff;
+	padding: 10px 2px 5px; /*弹出层内容边距*/
+	border: 2px solid #f58c21;
+	border-radius: 10px 0px 10px 0px;
+	box-shadow: 4px 4px 16px #555;
+	color: #555;
+	font-family: "Source Sans Pro", helvetica, sans-serif;
+	font-size: .8em;
+	line-height: 1.5em;
+}
+
+.resource_area article:hover aside {
+	display: block;
+} /*鼠标悬停于封面时显示弹出层*/
+.resource_area article aside li {
+	padding: .25em 0 .75em 1em; /*列表项的垂直间距和左边距*/
+	list-style-type: none; /*去掉默认的项目符号*/
+	line-height: 1.2em;
+}
+
+.resource_area article aside li a { /*链接文本*/
+	text-decoration: none;
+	font-size: 1.2em;
+	color: #616161;
+}
+
+.resource_area article aside li a:hover { /*悬停时突显链接*/
+	color: #333;
+} /*弹出层共享样式结束*/
+.resource_area article.left aside { /*左侧两本书*/
+	left: 84%;
+	top: 14px; /* 把弹出层定位在图片右侧*/
+}
+
+.resource_area article.right aside { /*右侧两本书*/
+	right: 84%;
+	top: 14px; /*把弹出层定位在图片左侧*/
+}
+
+.resource_area article aside:after { /*橙色三角形*/
+	content: ""; /*需要有内容，这里是一个空字符串*/
+	position: absolute; /*相对于弹出层定位*/
+	top: 33px;
+	border: 12px solid;
+	height: 0px;
+	width: 0px; /*收缩边框创造三角形*/
+}
+
+.resource_area article.left aside:after { /*左侧图书弹出层的三角形定位及颜色*/
+	right: 100%;
+	border-color: transparent #f58c21 transparent transparent;
+}
+
+.resource_area article.right aside:after { /*右侧图书弹出层的三角形定位及颜色*/
+	left: 100%;
+	border-color: transparent transparent transparent #f58c21;
+}
+
+.resource_area article aside:before { /*白色三角形*/
+	content: ""; /*需要有内容，这里是一个空字符串*/
+	position: absolute; /*相对于弹出层定位*/
+	border: 8px solid;
+	height: 0px;
+	width: 0px; /*收缩边框创造三角形*/
+	z-index: 100; /*保证白色三角形在最前面*/
+	top: 37px;
+}
+
+.resource_area article.left aside:before { /*左侧图书白色三角形的样式、位置和颜色*/
+	right: 100%;
+	border-color: transparent white transparent transparent;
+}
+
+.resource_area article.right aside:before { /*右侧图书白色三角形的样式、位置和颜色*/
+	left: 100%;
+	border-color: transparent transparent transparent white;
+}
+
+/*resource_area css document end*/
+
+/*footer css document begin*/
+footer {
+	padding: .5em 0 .35em 0; /*内容上下的间距*/
+	text-align: center; /*居中内容*/
+	border-radius: 10px 0px 10px 0px;
+	background: #fff;
+	box-shadow: 0 12px 8px -9px #555;
+	margin-bottom: 12px;
+}
+
+footer p { /*文本行的样式*/
+	font-weight: 400;
+	font-size: .85em;
+	letter-spacing: -.05em;
+	color: #555;
+}
+
+footer p a { /*文本行中的链接*/
+	font-family: 'Source Sans Pro';
+	font-style: italic;
+	font-weight: 700;
+	font-size: 1em;
+	color: #4eb8ea;
+	text-decoration: none;
+}
+
+footer p a:hover {
+	color: #777;
+}
+
+footer ul { /*链接列表*/
+	display: inline-block; /*收缩包围列表*/
+	margin: 4px 0 0;
+}
+
+footer li {
+	list-style-type: none; /*去掉默认的项目符号*/
+	float: left; /*让列表项水平排列*/
+	font-family: "Source Sans Pro";
+	font-weight: 400;
+	font-size: .85em;
+}
+
+footer li+li a {
+	border-left: 1px solid #ccc; /*链接分隔线*/
+}
+
+footer li a {
+	text-decoration: none; /*去掉链接默认的下划线*/
+	color: #aaa;
+	padding: 0 5px; /*链接间距*/
+}
+
+footer a:hover {
+	color: #777;
+}
+/*footer css document end*/
