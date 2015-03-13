@@ -1,5 +1,7 @@
 package com.huayu.web.service;
 
-public class UserService {
+import com.huayu.web.platform.db.service.BaseDBService;
 
+public class UserService extends BaseDBService{
+	
 }

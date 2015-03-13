@@ -32,10 +32,10 @@ public class AuthCheckFilter extends AbstractInterceptor{
 	
 	private boolean isCorrectAccount(String userName , String password){
 		boolean  isCorrect = false ;
-//		UserInfo user = accountService.queryUser(userName, password);		
-//		if( null != user ){
-//			isCorrect = true ;			
-//		}		
+		UserInfo user = accountService.queryUser(userName, password);		
+		if( null != user ){
+			isCorrect = true ;			
+		}		
 		return isCorrect ;
 	}
 
