@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.huayu.web.platform.bo.DataResourceColumn;
 
 public class JavaDataTypeMatchUtils implements DataTypeConstants {
@@ -43,9 +45,14 @@ public class JavaDataTypeMatchUtils implements DataTypeConstants {
 	}
 	
 	public static String sqlTypeToJDBC(String sqlType){
+		if(StringUtils.isEmpty(sqlType)){
+			return "";
+		}
+		
 		if( "int".equals(sqlType)){
 			return "INTEGER" ;
 		}
+		
 		return sqlType.toUpperCase() ;
 	}
 	private static Map<String , String> jdbcMap = new HashMap<String,String>();

@@ -1,0 +1,9 @@
+package ${packageName}.bo;
+
+/**
+* ${Comment}
+*
+*/
+public class ${Name} extends ${Name}Base{
+		
+}

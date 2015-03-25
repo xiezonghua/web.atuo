@@ -19,7 +19,7 @@ public class BasicDbManager {
 	private String userName;
 	private String password;
 
-	private final static Logger logger = LoggerFactory.getLogger(BasicDbManager.class);
+	private final static Logger logger = LoggerFactory.getLogger(BasicDbManager.class.getCanonicalName());
 	
 	private Connection conn = null;
 
@@ -97,8 +97,12 @@ public class BasicDbManager {
 				bean = beanClazz.newInstance();
 				for(Field f : field){					
 					f.setAccessible(true);				
-					if(rs.findColumn(f.getName()) > 0){
-						f.set(bean, rs.getString(f.getName()));
+					try{
+						if(rs.findColumn(f.getName()) > 0){
+							f.set(bean, rs.getString(f.getName()));
+						}
+					}catch(Exception e){
+						logger.info("field({}) is not a column" , f.getName());
 					}
 				}
 				beanList.add(bean);

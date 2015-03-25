@@ -5,6 +5,18 @@
 	padding: 0;
 }
 
+.layout_right{
+	float: right;
+}
+
+.font_bold{
+	font-weight: 700;
+}
+
+.layout_left{
+	float:left;
+}
+
 .clearfix:after {
 	content: ".";
 	display: block;
@@ -42,13 +54,14 @@ header section#title {
 }
 
 header section#title img {
+	float:left;
 	max-width: 30px;
-	max-height: 30px;
-	padding: 12px 12px 0;
+	max-height: 35px;
+	padding: 5px 5px 0;
 }
 
 header h2 {
-	padding: 0px 4px;
+	padding: 0px 0px;
 	font-family: "Microsoft YaHei", "微软雅黑", "SimHei", "黑体";
 	font-weight: 400; /*设定下载字体的粗细*/
 	font-size: 1.4em;
@@ -123,6 +136,7 @@ section#regist_login li form.login {
 	background: #fff;
 	box-shadow: 0 2px 8px 5px #555;
 	width: 17em;
+	z-index: 7;
 }
 
 section#regist_login li:hover form {

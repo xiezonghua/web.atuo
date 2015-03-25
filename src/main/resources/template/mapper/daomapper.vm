@@ -1,0 +1,8 @@
+package ${packageName}.dao.mapper;
+
+import com.huayu.platform.db.DaoMapper;
+import ${packageName}.bo.${Name};
+
+public interface ${Name}Mapper extends DaoMapper<${Name} , Long>{
+	
+}

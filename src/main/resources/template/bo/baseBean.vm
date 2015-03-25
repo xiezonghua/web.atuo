@@ -1,0 +1,43 @@
+package ${packageName}.bo;
+
+#set($importSet = ${javaMatchUtils.convertColumnImport($PropertyList)})
+#foreach($elem in ${importSet})
+$elem
+#end
+
+/**
+* ${Comment}
+*
+*/
+public class ${Name}Base {
+#foreach( $elem in ${PropertyList})
+#if(${elem.columnComment})
+	/**
+	*  ${elem.columnComment}
+	*/
+#else 
+	/**
+	*  ${elem.columnNameCamel}
+	*/
+#end
+#if($stringUtils.isNotBlank(${elem.columnDefault}))
+	private $javaMatchUtils.matchMySql($elem.dataType) ${elem.columnNameCamel} ;
+#else 
+	private $javaMatchUtils.matchMySql($elem.dataType) ${elem.columnNameCamel} ; 
+#end
+
+#end
+
+#foreach( $elem in ${PropertyList})
+	#set($columnUpper = ${camelCaseTool.toUpperCaseStart($elem.columnNameCamel)})
+	#set($dataType = $javaMatchUtils.matchMySql($elem.dataType))
+	private void set${columnUpper} (${dataType} ${elem.columnNameCamel}){
+		this.${elem.columnNameCamel} = ${elem.columnNameCamel};
+	} 
+
+	private ${dataType} get${columnUpper}(){
+		return ${elem.columnNameCamel};
+	}  
+
+#end 		
+}

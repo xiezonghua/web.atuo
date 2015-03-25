@@ -1,0 +1,111 @@
+@CHARSET "UTF-8";
+
+section#standard_lr_show {
+	position: relative;
+	width:100%;
+	overflow:hidden;
+	margin: 5px 0 ;	
+}
+
+section#standard_lr_show article{
+	float:left;
+	width: 70%;
+}
+
+section#standard_lr_show .content_title {
+	line-height: 1.8em;	
+	letter-spacing:.09em;
+	font-size:1em;	
+}
+
+section#standard_lr_show .title_seconder{
+	font-size:.5em;
+	line-height: 1.5;	
+	color:#666;
+	text-indent: 2em;
+}
+	
+.content_title img {
+	margin:0px;
+	padding:0 5px;
+	float:left;
+	width: 24px;
+	height: 24px;
+}
+
+.content_title strong {
+	font-weight: 500;
+}
+
+section#standard_lr_show .content_show{
+	margin:5px 0px;
+	height: 900px;
+	border: 1px solid #fff;
+}
+
+section#standard_lr_show aside{
+	float:right;
+	width:30%;
+}
+
+section#standard_lr_show aside>section{
+	border-bottom: 1px solid #fff;
+}
+
+section#standard_lr_show .owner_info{
+	padding:10px;
+}
+
+.owner_info img{
+	float:left;
+	margin:0px;
+	padding:5px 10px;	
+	width:90px;
+	height:90px;
+}
+
+.owner_info p{
+	font-size:0.8em;
+	line-height: 2em;
+	text-align: center;
+}
+
+.owner_info p a{
+	text-decoration: none;
+	padding:5px 8px;
+	border:1px solid #ef6f6f;
+	border-radius: 10px 0 10px 0 ; 
+	margin:0 5px;
+}
+
+
+section.resource_list{
+	padding:10px;	
+}
+
+.resource_list p{
+	border-bottom: 1px solid;	
+	line-height: 2.0em;
+}
+
+.resource_list ul{
+	padding-top:5px;	
+}
+
+.resource_list ul li{
+	list-style-type: none;	
+	line-height: 1.5em;
+}
+
+.resource_list ul li:BEFORE{
+	content: url(http://www.digxy.com/Images/image/page.png);	
+	width:25px;
+	height: 25px;
+	padding:0 5px;
+}
+
+.resource_list ul li a{
+	text-decoration: none;
+	color:#000;
+	font-size:0.9em;
+}

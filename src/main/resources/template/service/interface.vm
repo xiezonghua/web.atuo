@@ -1,0 +1,8 @@
+package ${packageName}.service;
+
+import ${packageName}.bo.${Name};
+import com.huayu.platform.service.BasicService;
+
+public interface ${Name}Service extends BasicService<${Name}, Long> {
+	
+}

@@ -1,0 +1,21 @@
+package ${packageName}.dao.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ${packageName}.bo.${Name};
+import ${packageName}.dao.${Name}Dao;
+import ${packageName}.dao.mapper.${Name}Mapper;
+import com.huayu.platform.db.DaoMapper;
+import com.huayu.platform.db.impl.AbstractDBBasicDao;
+
+@Service("${NameLowerCase}Dao")
+public class ${Name}DaoImpl extends AbstractDBBasicDao<${Name} , Long> implements ${Name}Dao{
+	@Autowired
+	private ${Name}Mapper ${NameLowerCase}Mapper ;
+
+	@Override
+	public DaoMapper<${Name}, Long> getDaoMapper() {		
+		return ${NameLowerCase}Mapper;
+	}
+}

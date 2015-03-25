@@ -1,5 +1,9 @@
 package com.huayu.web.platform.bo;
 
+import org.apache.commons.lang3.StringUtils;
+
+import com.huayu.web.platform.utils.string.CamelCaseUtils;
+
 public class DataResourceColumn {
 	/**
 	 * 列名
@@ -9,7 +13,7 @@ public class DataResourceColumn {
 	/**
 	 * 驼峰
 	 */
-	private String columnCamcelName;
+	private String columnNameCamel;
 	/**
 	 * 列默认值
 	 */
@@ -38,12 +42,15 @@ public class DataResourceColumn {
 		this.columnName = columnName;
 	}
 
-	public String getColumnCamcelName() {
-		return columnCamcelName;
+	public String getColumnNameCamel() {
+		if(StringUtils.isEmpty(columnNameCamel) && StringUtils.isNotEmpty(columnName)){
+			columnNameCamel = CamelCaseUtils.toCamelCase(columnName);
+		}
+		return columnNameCamel;
 	}
 
-	public void setColumnCamcelName(String columnCamcelName) {
-		this.columnCamcelName = columnCamcelName;
+	public void setColumnNameCamel(String columnNameCamel) {
+		this.columnNameCamel = columnNameCamel;
 	}
 
 	public String getColumnDefault() {

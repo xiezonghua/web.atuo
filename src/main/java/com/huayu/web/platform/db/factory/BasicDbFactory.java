@@ -27,6 +27,7 @@ public class BasicDbFactory {
 		}
 		try {
 			Class.forName(driverName);
+//			conn = DriverManager.getConnection("jdbc:mysql://192.168.68.56:3306/app?user=xzh&password=xzh");
 			conn = DriverManager.getConnection(url, userName, password);
 		} catch (ClassNotFoundException e) {			
 			logger.error("Driver failed to initialize");

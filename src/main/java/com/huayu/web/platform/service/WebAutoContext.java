@@ -1,10 +1,14 @@
 package com.huayu.web.platform.service;
 
+import java.util.Date;
+
+import org.apache.commons.lang3.StringUtils;
 import org.apache.velocity.VelocityContext;
 
 import com.huayu.web.platform.bo.DataResourceTable;
 import com.huayu.web.platform.constant.AutoClassInfoConstant;
 import com.huayu.web.platform.constant.AutoDataResourceInfoConstant;
+import com.huayu.web.platform.utils.datatype.JavaDataTypeMatchUtils;
 import com.huayu.web.platform.utils.string.CamelCaseUtils;
 
 public class WebAutoContext extends VelocityContext {
@@ -16,12 +20,20 @@ public class WebAutoContext extends VelocityContext {
 	}
 	
 	private void loadClassContent(DataResourceTable table){
-		put(AutoClassInfoConstant.PACKAGE_NAME, "com.huayu");
+		put(AutoClassInfoConstant.PACKAGE_NAME, AutoClassInfoConstant.PACKAGE_NAME_HEAD_DEFAULT);
 		String camelTableName = toCamelCase(table.getTableName());
 		put(AutoClassInfoConstant.NAME , toUpperCaseStart(camelTableName));
 		put(AutoClassInfoConstant.NAME_LOWER_CASE, camelTableName);
 		put(AutoClassInfoConstant.COMMENT , table.getTableComment());		
 		put(AutoClassInfoConstant.PROPERTY_LIST, table.getColumns());		
+		
+		
+		//velocity context tools definition by self.
+		put("camelCaseTool",  CamelCaseUtils.class);
+		put("javaMatchUtils", JavaDataTypeMatchUtils.class);
+		put("stringUtils", StringUtils.class);
+		put("now", new Date());
+		
 	}
 
 	private void loadDbContent(DataResourceTable table){

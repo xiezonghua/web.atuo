@@ -1,0 +1,22 @@
+package ${packageName}.service.impl;
+
+import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
+
+import ${packageName}.bo.${Name};
+import ${packageName}.dao.${Name}Dao;
+import com.huayu.platform.db.DBBasicDao;
+import com.huayu.service.${Name}Service;
+import com.huayu.platform.service.impl.AbstractBasicService;
+
+@Service("${NameLowerCase}Service")
+public class ${Name}ServiceImpl extends AbstractBasicService<${Name} , Long> implements ${Name}Service{
+
+	@Resource
+	private ${Name}Dao ${NameLowerCase}Dao ;
+
+	@Override
+	public DBBasicDao<${Name}, Long> getDao() {		
+		return ${NameLowerCase}Dao;
+	}
+}

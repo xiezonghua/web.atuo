@@ -1,0 +1,8 @@
+package ${packageName}.dao;
+
+import ${packageName}.bo.${Name};
+import com.huayu.platform.db.DBBasicDao;
+
+public interface ${Name}Dao extends DBBasicDao<${Name}, Long> {
+	
+}

@@ -18,5 +18,7 @@ public final class AutoClassInfoConstant {
 	 * 列属性列表
 	 */
 	public final static String PROPERTY_LIST = "PropertyList";
+	
+	public final static String STORE_SRC_PATH = "D://codetemp/src/com/huayu/"; 
 
 }
