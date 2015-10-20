@@ -1,17 +1,21 @@
-package ${packageName}.bo;
+package ${packageName}.bo.base;
 
-#set($importSet = ${javaMatchUtils.convertColumnImport($PropertyList)})
+#set($importSet = ${javaMatchUtils.collectImportBOM($PropertyList)})
 #foreach($elem in ${importSet})
+#if($stringUtils.isNotBlank(${elem}))
 $elem
 #end
+#end
 
+#if($stringUtils.isNotBlank(${Comment}))
 /**
 * ${Comment}
 *
 */
+#end
 public class ${Name}Base {
 #foreach( $elem in ${PropertyList})
-#if(${elem.columnComment})
+#if($stringUtils.isNotBlank(${elem.columnComment}))
 	/**
 	*  ${elem.columnComment}
 	*/
@@ -31,11 +35,11 @@ public class ${Name}Base {
 #foreach( $elem in ${PropertyList})
 	#set($columnUpper = ${camelCaseTool.toUpperCaseStart($elem.columnNameCamel)})
 	#set($dataType = $javaMatchUtils.matchMySql($elem.dataType))
-	private void set${columnUpper} (${dataType} ${elem.columnNameCamel}){
+	public void set${columnUpper}(${dataType} ${elem.columnNameCamel}){
 		this.${elem.columnNameCamel} = ${elem.columnNameCamel};
 	} 
 
-	private ${dataType} get${columnUpper}(){
+	public ${dataType} get${columnUpper}(){
 		return ${elem.columnNameCamel};
 	}  
 

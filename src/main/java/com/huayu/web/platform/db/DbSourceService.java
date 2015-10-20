@@ -14,6 +14,7 @@ public class DbSourceService {
 	
 	public List<DataResourceTable> getDatabaseTables(String sqlUrl, String userName, String password , String dbName) {
 		BasicDbManager dbManager = getDbManager(sqlUrl, userName, password); 
+//		execute(dbManager);
 		return getDatabaseTables(dbManager , dbName);
 	}
 	
@@ -42,6 +43,17 @@ public class DbSourceService {
 	
 	private BasicDbManager getDbManager(String sqlUrl, String userName, String password){
 		return new BasicDbManager(sqlUrl, userName, password);	
+	}
+	
+	public void execute(BasicDbManager dbManager ){
+		String sqlStr = "insert into tb_user ( yhm , pwd , email , nic , name ) values ( ? , ? , ? , ? , ? )";
+		List<Object> params = new ArrayList<Object>();
+		params.add("mail@163.com");
+		params.add("fcea92f7412b5da7be0cf42b8c93759");
+		params.add("mail@163.com");
+		params.add("次饿的");
+		params.add("mail@163.com");
+		dbManager.execute(sqlStr, params);
 	}
 	
 }

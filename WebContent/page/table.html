@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style type="text/css">
+.table_page {
+}
+
+.page_title {
+	border-bottom: 1px solid #efefef;
+	font-size: 1.3em;
+	font-weight: 700;
+}
+
+.page_content {
+	width:700px;
+	padding:10px;
+}
+
+.page_point {
+	color: #ed1d23;
+}
+
+.table_title {
+	font-weight: 700;
+}
+
+.table_content {
+	width:600px;
+}
+
+.field_title {
+	font-weight: bold;
+	font-size: 18px;
+	background-color: #ddd;
+}
+
+table{
+	border-collapse: collapse;
+	width: 100%;
+}
+table ,tr, td{
+	border: 1px solid #ccc;
+}
+
+table td{
+	color: #00822B;
+	font-size:.9em;
+	line-height:1.5em;
+	text-align: center;
+	padding:5px;
+}
+
+table td >input[type="text"], textarea {
+	border:0;
+	margin:0;
+	padding:5px 0;
+	width:100%;	
+}
+
+table td >textarea {
+	height: 7em;
+}
+
+.page_catalog{
+	position: fixed;
+	top:50px;
+	left:700px;
+	
+}
+
+dt{
+	height: 4em;	
+}
+.circle {
+	display:inline-block;
+	border:2px solid #00bb22;
+	border-radius:50%;
+	width:12px;
+	height: 12px;	
+	/* 宽度和高度需要相等 */
+	line-height: 12px;
+	text-align: center;
+}
+.cricle_center{
+	display:inline-block;
+	border-radius:50%;
+	border: 2px solid #00bb22;
+	vertical-align: middle;
+	margin-top: -4px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+	var jq = $;
+	function init(){
+		jq("#")
+	}
+</script>
+</head>
+<body>
+	<section class="table_page">
+		<section class="page_title">
+			<span>项目申请</span> 
+			<input name="docid" type="hidden" id="docid" class="aid" value="100">
+		</section>
+		<section class="page_content">
+			<section>
+				<p class="page_point">
+					<em>为保证项目正常进行和后续的人才认证工作顺利开展，请你填写以下更多信息！</em>
+				</p>
+			</section>
+			<section class="table_content">
+				<section>
+					<p class="table_title">
+						<span>一、基本信息:</span>
+					</p>
+				</section>
+				<section>
+					<table cellpadding="1" cellspacing="0">
+						<tbody>
+							<tr>
+								<td id="a" colspan="4" class="field_title">基本资料</td>
+							</tr>
+							<tr>
+								<td class="t_td">姓名</td>
+								<td style="width: 200px;">
+									<input type="text" value="" class="txt_bottom" id="name">
+									<span id="name_msg"></span>
+								</td>
+								<td class="t_td">性别</td>
+								<td style="width: 200px;">
+									<input type="radio" name="sex" value="1" class="txt_bottom" id="sex_boy" checked="checked">
+									<label for="sex_boy">男</label>
+									<input type="radio" name="sex" value="0" class="txt_bottom" id="sex_girl">
+									<label for="sex_girl">女</label>
+									<span id="sex_msg"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="t_td">籍贯</td>
+								<td>
+									<input type="text" value="" class="txt_bottom" id="jiguan">
+									<span id="jiguan_msg"></span>
+								</td>
+								<td class="t_td">出生年月</td>
+								<td>
+									<input type="text" value="" class="txt_bottom" id="birthdate">
+									<span id="birthdate_msg"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="t_td">当前就读院校</td>
+								<td>
+									<input type="text" value="" class="txt_bottom" id="jdyx">
+									<span id="jdyx_msg"></span>
+								</td>
+								<td class="t_td">身份证号</td>
+								<td>
+									<input type="text" value="" class="txt_bottom" id="sfz">
+									<span id="sfz_msg"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="t_td">专业</td>
+								<td>
+									<input type="text" value="" class="txt_bottom" id="zhuanye">
+									<span id="zhuanye_msg"></span>
+								</td>
+								<td class="t_td">健康状况</td>
+								<td>
+									<input type="text" value="" class="txt_bottom" id="jkzk">
+									<span id="jkzk_msg"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="t_td">英语水平</td>
+								<td colspan="3">	
+									<input type="text" value="" class="txt_bottom" id="englishlevel">
+									<span id="englishlevel_msg"></span>
+								</td>
+							</tr>
+							<tr>
+								<td id="b" colspan="4" class="field_title">
+									 此前教育经历
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<textarea name="edu" id="p_edu" class="edu"></textarea>
+									<span id="edu_msg"></span>
+								</td>
+							</tr>
+							<tr>
+								<td id="c" colspan="4" class="field_title">
+									专业技能和经验<a name="4"></a>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<textarea name="zyjn" id="zyjn" class="p_zyjn"></textarea>
+									<span id="zyjn_msg"></span>
+								</td>
+							</tr>
+							<tr>
+								<td id="d" colspan="4" class="field_title" >
+									参与项目后工作计划<a name="5"></a>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<textarea name="gzjh" id="gzjh" class="p_gzjh"></textarea>
+									<span id="gzjh_msg"></span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<p class="table_title" id="e">
+						<span>二、同意须知:</span>
+					</p>
+				</section>
+				<section class="table_content" style="border: 1px solid #ccc;">
+					<div class="Agreed_project"
+						style="text-indent: 2em;line-height:1.8em; font-size:0.9em;color: #999; padding: 5px;">
+						本人保证申请中所填写信息属实，保证参与项目后将积极主动的完成项目负责人分配的工作，及时提交工作成果，并将遵守与知识产权等相关的法律法规。
+					</div>
+					<div style="margin: 10px; margin-left: 200px;">
+						<label for="protocol_agree" style="color:#f70022;font-size:0.9em;">已阅读须知，并同意</label>
+						<input type="checkbox"  id="protocol_agree" >
+						<span id="protocol_agree_msg"></span>
+					</div>
+				</section>
+				<section id="f">
+					<div style="padding-top:12px;margin-left: 200px;">
+						<input type="button" value="提交申请" class="nobtn" id="submit_project" > 
+					    <input type="reset" value="重置修改" class="nobtn" id="reset_project">
+					</div>
+				</section>
+			</section>
+		</section>
+
+
+		<div class="page_catalog">
+			<div class="history">
+				<div class="history-date">
+					<dl>
+						<dt>
+							<span class="sequence circle"><span class="cricle_center"></span></span>
+							<span><a href="#" style="color: red;">项目申请</a></span>
+						</dt>
+						<dt>
+							<span class="sequence circle"><span class="cricle_center"></span></span>
+							<span><a href="#a" style="color: red;">基本信息</a></span>
+						</dt>
+						<dt>
+							<span class="sequence circle"><span class="cricle_center"></span></span>
+							<span><a href="#b">此前教育经历 </a></span>
+						</dt>
+						<dt>
+							<span class="sequence circle"><span class="cricle_center"></span></span>
+							<span><a href="#c">专业技能和经验</a></span>
+						</dt>
+						<dt>
+							<span class="sequence circle"><span class="cricle_center"></span></span>
+							<span><a href="#d">参与项目后工作计划</a></span>
+						</dt>	
+						<dt>
+							<span class="sequence circle"><span class="cricle_center"></span></span>
+							<span><a href="#e" style="color: red;">同意须知</a></span>
+						</dt>
+						<dt>
+							<span class="sequence circle"><span class="cricle_center"></span></span>
+							<span><a href="#f" style="color: red;">提交申请</a></span>
+						</dt>
+					</dl>
+				</div>
+			</div>
+			<script type="text/javascript" language="javascript"
+				src="js/history.js"></script>
+			<!-- 公司大事记时间轴 E -->
+		</div>
+	</section>
+</body>
+</html>

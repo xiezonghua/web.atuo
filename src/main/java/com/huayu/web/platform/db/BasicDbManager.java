@@ -62,6 +62,21 @@ public class BasicDbManager {
 
 		return beanList == null ? new ArrayList<T>() : beanList;
 	}
+	
+	public void execute(String sqlStr, List<Object> params) {
+		Connection con = getConnection(true);
+		PreparedStatement sta = null;
+
+		try {
+			sta = con.prepareStatement(sqlStr);
+			compParam(sta, params);
+			sta.execute();	
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			close(con , sta , null);
+		}
+	}
 
 	
 	/**

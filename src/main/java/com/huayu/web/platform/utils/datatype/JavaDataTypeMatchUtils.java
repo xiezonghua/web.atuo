@@ -16,9 +16,11 @@ public class JavaDataTypeMatchUtils implements DataTypeConstants {
 			return JAVA_STRING;
 		} else if (dataType.contains("tinyint")) {
 			return JAVA_BYTE;
-		} else if (dataType.contains("int")) {
+		} else if (dataType.contains("bigint")) {
 			return JAVA_LONG;
-		} else if (dataType.contains("date")) {
+		} else if(dataType.contains("int")){
+			return JAVA_INTEGER;
+		}else if (dataType.contains("date")) {
 			return JAVA_DATE;
 		} else if(dataType.contains("decimal")){
 			return JAVA_BIG_DECIMAL;
@@ -51,6 +53,10 @@ public class JavaDataTypeMatchUtils implements DataTypeConstants {
 		
 		if( "int".equals(sqlType)){
 			return "INTEGER" ;
+		}
+		
+		if( sqlType.toUpperCase().equals("DATETIME") || sqlType.toUpperCase().equals("TEXT")){
+			return "";
 		}
 		
 		return sqlType.toUpperCase() ;

@@ -6,7 +6,7 @@ public final class AutoClassInfoConstant {
 	 */
 	public final static String PACKAGE_NAME = "packageName";
 
-	public final static String PACKAGE_NAME_HEAD_DEFAULT = "com.huayu" ;
+	public final static String PACKAGE_NAME_HEAD_DEFAULT = "com.huayu";
 
 	public final static String NAME = "Name";
 
@@ -18,7 +18,8 @@ public final class AutoClassInfoConstant {
 	 * 列属性列表
 	 */
 	public final static String PROPERTY_LIST = "PropertyList";
-	
-	public final static String STORE_SRC_PATH = "D://codetemp/src/com/huayu/"; 
 
+	// public final static String STORE_SRC_PATH =
+	// "D:/workspace/digxy-web/src/main/java/com/huayu/";
+	public final static String STORE_SRC_PATH = "D:/codetemp/src/main/java/com/huayu/";
 }

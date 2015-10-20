@@ -38,4 +38,12 @@ public class BasicDbFactory {
 		return conn ;
 	}
 	
+	public static void main(String[] args) {
+		String sqlUrl = "jdbc:mysql://192.168.67.130:3306/digxy_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&maxReconnects=2";
+		String userName = "xzh";
+		String password = "xzh";
+		Connection con = BasicDbFactory.getConnection(sqlUrl, userName, password);
+		System.out.println("=======" + con);
+		
+	}
 }

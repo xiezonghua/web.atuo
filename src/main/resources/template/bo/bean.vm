@@ -1,4 +1,5 @@
 package ${packageName}.bo;
+import ${packageName}.bo.base.${Name}Base;
 
 /**
 * ${Comment}

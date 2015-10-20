@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.velocity.Template;
 import org.apache.velocity.app.VelocityEngine;
 import org.slf4j.Logger;
@@ -25,7 +26,7 @@ public class CodeGeneratorService {
 	
 	public void generateCode(String sqlUrl , String userName , String password , String dbName){
 		LOGGER.info("Generate path: {}" ,AutoClassInfoConstant.STORE_SRC_PATH);
-		cleanTmpPath(AutoClassInfoConstant.STORE_SRC_PATH);
+		clean();
 		
 		List<DataResourceTable> databaseTables = dbSource.getDatabaseTables(sqlUrl, userName, password, dbName);
 		LOGGER.debug("query the tables from {} success , data size is {}" , dbName , databaseTables.size());
@@ -48,6 +49,8 @@ public class CodeGeneratorService {
 
 	public void generateMapperCode(WebAutoContext context){
 		generate(context , ClassTempleteEnum.IBATIS_MAPPING_XML);
+		
+		generate(context , ClassTempleteEnum.IBATIS_MAPPING_BASE_XML);
 		
 		generate(context , ClassTempleteEnum.IBATIS_MAPPING_IMPL);
 	}
@@ -111,6 +114,16 @@ public class CodeGeneratorService {
 
 	}
 	
+	private void clean(){
+		cleanTmpPath(AutoClassInfoConstant.STORE_SRC_PATH + ClassTempleteEnum.BO.getPackagePath());	
+		
+		cleanTmpPath(AutoClassInfoConstant.STORE_SRC_PATH + ClassTempleteEnum.DAO.getPackagePath());	
+		
+		cleanTmpPath(AutoClassInfoConstant.STORE_SRC_PATH + ClassTempleteEnum.SERVICE.getPackagePath());	
+		
+		cleanTmpPath(AutoClassInfoConstant.STORE_SRC_PATH + ClassTempleteEnum.IBATIS_MAPPING_XML.getPackagePath());		
+	}
+	
 	private void cleanTmpPath(String path){
 		try{
 			if(deleteDir(new File(path))){
@@ -125,16 +138,23 @@ public class CodeGeneratorService {
 	}
 	
 	private static boolean deleteDir(File dir) {
-		if (dir.isDirectory()) {
-			String[] children = dir.list();
-			for (int i = 0; i < children.length; i++) {
-				boolean success = deleteDir(new File(dir, children[i]));
-				if (!success) {
-					return false;
-				}
-			}
+		try {
+			FileUtils.deleteDirectory(dir);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+//		if (dir.isDirectory()) {
+//			String[] children = dir.list();
+//			for (int i = 0; i < children.length; i++) {
+//				boolean success = deleteDir(new File(dir, children[i]));
+//				if (!success) {
+//					return false;
+//				}
+//			}
+//		}
 		// 目录此时为空，可以删除
-		return dir.delete();
+//		return dir.delete();
+		return true;
 	}
 }

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF8" />
+<style type="text/css">
+	.page {
+		font: 14px arial;
+		white-space: nowrap;
+		padding-left: 35px;
+	}
+	.page .n {
+		height: 28px;
+		padding: 0 18px;
+		border: 1px solid #e1e2e3;
+	}
+	.page a {
+		cursor: pointer;
+	}
+	.page .pc {
+		width: 28px;
+		height: 28px;
+		border: 1px solid #e1e2e3;
+		cursor: pointer;
+	}
+	.page span {
+		display: block;
+	}
+	.page a, .page strong {
+		display: inline-block;
+		vertical-align: text-bottom;
+		text-align: center;
+		line-height: 28px;
+		text-decoration: none;
+		overflow: hidden;
+		margin-right: 9px;
+		background: white;
+	}
+	.page strong .pc {
+		border: 0;
+		width: 28px;
+		height: 28px;
+		line-height: 28px;
+	}
+</style>
+<script type="text/javascript">
+	var paginate = {
+		extendConfig : function( config){
+			var localConfig = {
+				selectedNum : config.selectedNum ? config.selectedNum : 1,
+				count : config.count,
+				limit : config.limit ? config.limit: 10 ,
+				pageCount : 1,
+				startNum : 1 , 
+				end : 0 ,
+				searchKey : config.searchKey,
+				url : config.url
+			};
+			
+			localConfig.pageCount = (localConfig.count/localConfig.limit);
+			if(localConfig.count%localConfig.limit > 0){
+				localConfig.pageCount = localConfig.pageCount + 1;
+			}
+			var leftOffset = (localConfig.selectedNum + localConfig.limit/2);
+			if( leftOffset > localConfig.limit ){
+				if(localConfig.pageCount >= leftOffset){
+					localConfig.end = leftOffset - 1;
+				}else{
+					localConfig.end = localConfig.pageCount;
+				}
+			}else{
+				localConfig.end = localConfig.limit;
+			}
+			localConfig.startNum = localConfig.end - localConfig.limit;
+			return localConfig;
+		},
+		
+		init: function( wrapperId,  config ){
+			var localConfig = this.extendConfig(config);
+			
+			var url = localConfig.url + localConfig.searchKey + "&curPage=";
+			if(!localConfig.searchKey){
+				url = localConfig.url + "?curPage=";
+			}
+			
+			var html = new Array();
+			var end ="</a>";
+			
+			if(localConfig.selectedNum > 1){
+				html.push('<a href="');
+				html.push(url + (localConfig.selectedNum - 1));
+				html.push('" class="n">&lt;上一页</a>');
+			}
+			
+			for(var i= localConfig.startNum ; i <= localConfig.end; i++){
+				if(i == localConfig.selectedNum){
+					html.push("<strong");
+					end ="</strong>"; 
+				}else{
+					html.push("<a href=");
+					html.push(url + i);	
+				}
+				
+				html.push('><span class="pc">');
+				html.push(i);
+				html.push("</span>");
+				html.push(end);
+			}
+			
+			if(localConfig.selectedNum <  localConfig.end){
+				html.push('<a href="');
+				html.push(url + (localConfig.selectedNum + 1));
+				html.push('" class="n">下一页&gt;</a>');
+			}
+			
+			document.getElementById(wrapperId).innerHTML = html.join("");
+		}
+		
+		
+	};
+</script>
+<body>
+<div id="page1" class="page">
+</div>
+<script type="text/javascript">
+paginate.init({
+	selectedNum: 11,
+	count: 140,
+	searchKey : "",
+	url : "/search?"
+});
+</script>
+
+<div class="page">
+	<a href="#" class="n">&lt;上一页</a> 
+	<a href="#">
+		<span class="pc">5</span>
+	</a>
+	<a href="#">
+		<span class="pc">6</span>
+	</a>
+	<a href="#">
+		<span class="pc">7</span>
+	</a>
+	<a href="#">
+		<span class="pc">8</span>
+	</a>
+	<a href="#">
+		<span class="pc">9</span>
+	</a>
+	<strong>
+		<span class="pc">10</span>
+	</strong>
+	<a href="#">
+		<span class="pc">11</span>
+	</a>
+	<a href="#">
+		<span class="pc">12</span>
+	</a>
+	<a href="#">
+		<span class="pc">13</span>
+	</a>
+	<a href="#">
+		<span class="pc">14</span>
+	</a>
+	<a href="#" class="n">下一页&gt;</a>
+</div>
+</body>
+</html>

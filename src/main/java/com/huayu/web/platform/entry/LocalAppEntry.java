@@ -12,7 +12,7 @@ public class LocalAppEntry {
 	
 	private CodeGeneratorService service;
 	
-	private String sqlUrl = "jdbc:mysql://192.168.68.56:3306/app";
+	private String sqlUrl = "jdbc:mysql://192.168.1.107:3306/app";
 	private String userName = "xzh";
 	private String password = "xzh";
 
@@ -27,10 +27,11 @@ public class LocalAppEntry {
 	}
 
 	public static void main(String[] args) {
-		String sqlUrl = "jdbc:mysql://192.168.68.56:3306/app?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&maxReconnects=2";
+//		String sqlUrl = "jdbc:mysql://192.168.1.122:3306/digxy_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&maxReconnects=2";
+		String sqlUrl = "jdbc:mysql://192.168.67.150:3306/digxy_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&maxReconnects=2";
 		String userName = "xzh";
 		String password = "xzh";
-		String dbName = "app";
+		String dbName = "digxy_test";
 		CodeGeneratorService codeGenService = new CodeGeneratorService();
 		codeGenService.generateCode(sqlUrl, userName, password, dbName);
 	}
